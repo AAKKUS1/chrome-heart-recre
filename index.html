@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Chrome</title>
+</head>
+<body>
+    <img src="./assets.html/orange-cross.png" alt="Trail 0" class="trail">
+    <img src="./assets.html/white-cross.png" alt="Trail 1" class="trail">
+    <img src="./assets.html/red-cross.png" alt="Trail 2" class="trail">
+    <img src="./assets.html/blue-cross.png" alt="Trail 3" class="trail">
+    <img src="./assets.html/yellow-cross.png" alt="Trail 4" class="trail">
+
+
+
+<header>
+    <nav>
+        <div></div>
+
+            <img class="logo" src="./assets.html/cross-white.jpg" alt="White Cross" />
+        <div></div>
+    </nav>
+</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+           const trails = document.querySelectorAll('.trail');
+    const trailPositions = Array.from({ length: trails.length }, () => ({ x: 0, y: 0 }));
+
+    document.addEventListener('mousemove', (event) => {
+      const { clientX, clientY } = event;
+
+  
+      trailPositions[0] = { x: clientX, y: clientY };
+
+    
+      for (let i = 1; i < trailPositions.length; i++) {
+        const prev = trailPositions[i - 1]; 
+        const curr = trailPositions[i]; 
+
+        trailPositions[i] = {
+          x: curr.x + (prev.x - curr.x) * 0.2,
+          y: curr.y + (prev.y - curr.y) * 0.2,
+        };
+      }
+
+      trails.forEach((trail, index) => {
+        const { x, y } = trailPositions[index];
+        trail.style.transform = `translate(${x - trail.offsetWidth / 2}px, ${y - trail.offsetHeight / 2}px)`;
+      });
+    });
+
+      </script>
+</body>
+</html>
