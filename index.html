@@ -12,15 +12,16 @@
     <img src="./assets.html/red-cross.png" alt="Trail 2" class="trail">
     <img src="./assets.html/blue-cross.png" alt="Trail 3" class="trail">
     <img src="./assets.html/yellow-cross.png" alt="Trail 4" class="trail">
+    <img src="./assets.html/pink-cross.png" alt="Trail 5" class="trail">
+
 
 
 
 <header>
     <nav>
-        <div></div>
-
+      <div></div>
             <img class="logo" src="./assets.html/cross-white.jpg" alt="White Cross" />
-        <div></div>
+      <div></div>
     </nav>
 </header>
 
@@ -28,41 +29,33 @@
   <section class="item-board">
 
       <div class="item-card">
-         <div class="image-holder">
+         <div class="image-holder"  id="first-item">
          </div>
           <div class="item-desc">
             <h2>Duffel Bag</h2>
-            <p class="item-lwo">$40000</p>
+            <p class="item-lwo" id="first-price">$40000</p>
         </div>
       </div>
 
       <div class="item-card">
-        <div class="image-holder">
+        <div class="image-holder" id="second-item">
         </div>
          <div class="item-desc">
-           <h2></h2>
-           <p class="item-lwo"></p>
+           <h2>Short</h2>
+           <p class="item-lwo" id="second-price">$1000000</p>
        </div>
      </div>
 
      <div class="item-card">
-      <div class="image-holder">
+      <div class="image-holder" id="third-item">
       </div>
        <div class="item-desc">
-         <h2>d</h2>
-         <p class="item-lwo"></p>
+         <h2>Jacket</h2>
+         <p class="item-lwo" id="third-price">$150000</p>
      </div>
    </div>
   </section>
 </main>
-
-
-
-
-
-
-
-
 
 
 
@@ -86,8 +79,8 @@
         const curr = trailPositions[i]; 
 
         trailPositions[i] = {
-          x: curr.x + (prev.x - curr.x) * 0.2,
-          y: curr.y + (prev.y - curr.y) * 0.2,
+          x: curr.x + (prev.x - curr.x) * 0.15,
+          y: curr.y + (prev.y - curr.y) * 0.15,
         };
       }
 
